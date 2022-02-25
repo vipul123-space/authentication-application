@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Form, Card, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+
 const Signup = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -11,6 +12,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const { signup } = useAuth();
 
+  console.log(signup);
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
